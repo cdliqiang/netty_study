@@ -3,7 +3,7 @@ package com.lee.netty.production.common;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 
-import static com.lyncc.netty.production.common.NettyCommonProtocol.*;
+import static com.lee.netty.production.common.NettyCommonProtocol.*;
 
 /**
  * 

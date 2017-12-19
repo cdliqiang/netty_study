@@ -2,33 +2,22 @@ package com.lee.netty.production.client;
 
 import com.lee.netty.production.ConnectionWatchDog;
 import com.lee.netty.production.common.Acknowledge;
-import com.lee.netty.production.common.Message;
 import com.lee.netty.production.common.MessageNonAck;
-import com.lee.netty.production.common.NettyCommonProtocol;
-import com.lyncc.netty.production.common.exception.ConnectFailedException;
 import io.netty.bootstrap.Bootstrap;
-import io.netty.buffer.ByteBuf;
 import io.netty.channel.*;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import io.netty.handler.codec.ReplayingDecoder;
 import io.netty.handler.timeout.IdleStateHandler;
 import io.netty.util.HashedWheelTimer;
-import io.netty.util.Signal;
 import io.netty.util.Timer;
 import io.netty.util.concurrent.DefaultThreadFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.TimeUnit;
 
-import static com.lyncc.netty.production.common.NettyCommonProtocol.*;
-import static com.lyncc.netty.production.common.NettyCommonProtocol.ACK;
-import static com.lyncc.netty.production.common.NettyCommonProtocol.SERVICE_4;
-import static com.lyncc.netty.production.serializer.SerializerHolder.serializerImpl;
 import static java.util.concurrent.TimeUnit.SECONDS;
 
 /**
@@ -96,7 +85,7 @@ public class DefaultClientConnector extends NettyClientConnector {
             future.sync();
             channel = future.channel();
         } catch (Throwable t) {
-            throw new ConnectFailedException("connects to [" + host + ":"+port+"] fails", t);
+            throw new RuntimeException("connects to [" + host + ":" + port + "] fails", t);
         }
         return channel;
     }

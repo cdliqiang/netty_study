@@ -6,7 +6,7 @@ import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 
-import static com.lyncc.netty.production.serializer.SerializerHolder.serializerImpl;
+import static com.lee.netty.production.serializer.SerializerHolder.serializerImpl;
 
 /**
  * Created by liqiang on 2017/12/15.

@@ -1,6 +1,5 @@
 package com.lee.netty.hello;
 
-import com.lyncc.netty.hello.HelloWorldServerHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -12,14 +11,13 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 
-import java.nio.channels.ServerSocketChannel;
-
 /**
  * Created by liqiang on 2017/12/6.
  */
 public class HelloWorldServer {
 
     int port;
+
     public HelloWorldServer(int port) {
         this.port = port;
     }

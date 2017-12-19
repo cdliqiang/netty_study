@@ -4,15 +4,14 @@ import com.lee.netty.production.common.Acknowledge;
 import com.lee.netty.production.common.Message;
 import com.lee.netty.production.common.NettyCommonProtocol;
 import io.netty.buffer.ByteBuf;
-import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ReplayingDecoder;
 import io.netty.util.Signal;
 
 import java.util.List;
 
-import static com.lyncc.netty.production.common.NettyCommonProtocol.*;
-import static com.lyncc.netty.production.serializer.SerializerHolder.serializerImpl;
+import static com.lee.netty.production.common.NettyCommonProtocol.*;
+import static com.lee.netty.production.serializer.SerializerHolder.serializerImpl;
 
 /**
  * Created by liqiang on 2017/12/15.
@@ -71,7 +70,7 @@ public class ConnectorMessageDecoder extends ReplayingDecoder<ConnectorMessageDe
                     default:
                         throw new IllegalAccessException();
                 }
-            checkpoint(State.HEADER_MAGIC);
+                checkpoint(State.HEADER_MAGIC);
         }
     }
 

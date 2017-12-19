@@ -1,7 +1,6 @@
 package com.lee.netty.production.example;
 
 import com.lee.netty.production.server.DefaultCommonSrvAcceptor;
-import com.lee.netty.production.server.DefaultSrvAcceptor;
 
 /**
  * Created by liqiang on 2017/12/15.
